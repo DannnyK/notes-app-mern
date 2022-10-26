@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createNote, updateNote } from "../../actions/notes";
 
+// import Quill from "../editor/editor";
+
 // import { TextField, Button, Typography, Paper } from "@mui/material";
 
 const Form = ({ currentId, setCurrentId }) => {
