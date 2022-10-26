@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createNote, updateNote } from "../../actions/notes";
+import { createNote, updateNote } from "../../actions/note-actions";
 
 const Form = ({ currentId, setCurrentId }) => {
 	const [noteData, setNoteData] = useState({

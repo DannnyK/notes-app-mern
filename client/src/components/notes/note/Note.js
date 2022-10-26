@@ -2,7 +2,7 @@ import React from "react";
 import moment from "moment";
 import { useDispatch } from "react-redux";
 
-import { deleteNote } from "../../../actions/notes";
+import { deleteNote } from "../../../actions/note-actions";
 
 const Note = ({ note, setCurrentId }) => {
 	const dispatch = useDispatch();

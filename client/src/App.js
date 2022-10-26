@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import "./App.css";
-import { getNotes } from "./actions/notes";
-import Notes from "./components/notes/Notes";
+import { getNotes } from "./actions/note-actions";
+import Notes from "./components/notes/NotesList";
 import Form from "./components/form/Form";
 
 const App = () => {
