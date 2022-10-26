@@ -1,6 +1,12 @@
 import React from "react";
 import moment from "moment";
+import { useDispatch } from "react-redux";
+
+import { deleteNote } from "../../../actions/notes";
+
 const Note = ({ note, setCurrentId }) => {
+	const dispatch = useDispatch();
+
 	return (
 		<>
 			<div className="note-header">
@@ -13,7 +19,7 @@ const Note = ({ note, setCurrentId }) => {
 
 			<div className="note-footer">
 				<span>{moment(note.createdAt).fromNow()}</span>
-				<button onClick={() => {}}>Delete</button>
+				<button onClick={() => dispatch(deleteNote(note._id))}>Delete</button>
 				{/* <button onClick={() => setCurrentId(note._id)}>edit</button> */}
 			</div>
 		</>

@@ -1,5 +1,8 @@
 export default (notes = [], action) => {
 	switch (action.type) {
+		case "DELETE":
+			return notes.filter((note) => note._id !== action.payload);
+
 		case "UPDATE":
 			return notes.map((note) =>
 				note._id === action.payload._id ? action.payload : note
