@@ -5,7 +5,6 @@ import Note from "./note/Note";
 
 const Notes = ({ setCurrentId }) => {
 	const notes = useSelector((state) => state.notes);
-	// console.log(notes);
 	return !notes.length ? (
 		<h1>no notes</h1>
 	) : (

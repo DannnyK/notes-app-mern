@@ -1,5 +1,4 @@
 import * as api from "../api";
-import Note from "../components/notes/note/Note";
 import { FETCH_ALL, CREATE, DELETE, UPDATE } from "../constants/actionTypes";
 
 export const getNotes = () => async (dispatch) => {

@@ -20,7 +20,6 @@ const Note = ({ note, setCurrentId }) => {
 			<div className="note-footer">
 				<span>{moment(note.createdAt).fromNow()}</span>
 				<button onClick={() => dispatch(deleteNote(note._id))}>Delete</button>
-				{/* <button onClick={() => setCurrentId(note._id)}>edit</button> */}
 			</div>
 		</>
 	);
