@@ -21,7 +21,9 @@ const App = () => {
 				<div className="note-list">
 					<Notes />
 				</div>
-				<div className="edit-panel">edit</div>
+				<div className="edit-panel">
+					<Form />
+				</div>
 			</div>
 		</div>
 	);
