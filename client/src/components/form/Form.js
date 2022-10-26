@@ -1,21 +1,39 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { createNote } from "../../actions/notes";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { createNote, updateNote } from "../../actions/notes";
 
 // import { TextField, Button, Typography, Paper } from "@mui/material";
 
-const Form = () => {
+const Form = ({ currentId, setCurrentId }) => {
 	const [noteData, setNoteData] = useState({
 		title: "",
 		body: "",
 	});
+	const note = useSelector((state) =>
+		currentId ? state.notes.find((p) => p._id === currentId) : null
+	);
 	const dispatch = useDispatch();
+
+	useEffect(() => {
+		if (note) setNoteData(note);
+	}, [note]);
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		dispatch(createNote(noteData));
+
+		if (currentId) {
+			dispatch(updateNote(currentId, noteData));
+		} else {
+			dispatch(createNote(noteData));
+		}
+		clear();
 	};
 
-	const clear = () => {};
+	const clear = () => {
+		setCurrentId(null);
+		setNoteData({ title: "", body: "" });
+	};
+
 	return (
 		<form
 			autoComplete="off"
@@ -23,7 +41,7 @@ const Form = () => {
 			onSubmit={handleSubmit}
 			className="form"
 		>
-			<h6>Create a Note</h6>
+			<h6>{currentId ? "Edit" : "Create"} a Note</h6>
 			<textarea
 				cols="30"
 				label="title"

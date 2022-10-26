@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import "./App.css";
 import { getNotes } from "./actions/notes";
@@ -6,6 +6,7 @@ import Notes from "./components/notes/Notes";
 import Form from "./components/form/Form";
 
 const App = () => {
+	const [currentId, setCurrentId] = useState(null);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -18,11 +19,9 @@ const App = () => {
 				<h1>Menu Bar</h1>
 			</nav>
 			<div className="view-panel">
-				<div className="note-list">
-					<Notes />
-				</div>
+				<Notes setCurrentId={setCurrentId} />
 				<div className="edit-panel">
-					<Form />
+					<Form currentId={currentId} setCurrentId={setCurrentId} />
 				</div>
 			</div>
 		</div>
