@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
-import noteRoutes from './routes/notes.js';
+import noteRoutes from './routes/note-routes.js';
 
 const app = express();
 
