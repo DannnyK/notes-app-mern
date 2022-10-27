@@ -1,19 +1,20 @@
-import Note from "../models/note.js";
-import mongoose from "mongoose";
+import NoteModel from '../models/note-model.js';
+import mongoose from 'mongoose';
 
 export const getNotes = async (req, res) => {
 	try {
-		const notes = await Note.find();
+		const notes = await NoteModel.find();
 
 		res.status(200).json(notes);
 	} catch (error) {
 		res.status(404).json({ message: error.message });
 	}
 };
+
 export const createNote = async (req, res) => {
 	const note = req.body;
 
-	const newNote = new Note(note);
+	const newNote = new NoteModel(note);
 	try {
 		await newNote.save();
 
@@ -28,9 +29,9 @@ export const updateNote = async (req, res) => {
 	const note = req.body;
 
 	if (!mongoose.Types.ObjectId.isValid(_id))
-		return res.status(404).send("No Note with that ID!");
+		return res.status(404).send('No Note with that ID!');
 
-	const updateNote = await Note.findByIdAndUpdate(
+	const updateNote = await NoteModel.findByIdAndUpdate(
 		_id,
 		{ ...note, _id },
 		{ new: true }
@@ -43,8 +44,8 @@ export const deleteNote = async (req, res) => {
 	const { id } = req.params;
 
 	if (!mongoose.Types.ObjectId.isValid(id))
-		return res.status(404).send("No Note with that ID!");
+		return res.status(404).send('No Note with that ID!');
 
-	await Note.findByIdAndRemove(id);
-	res.json({ message: "Note deleted successfully" });
+	await NoteModel.findByIdAndRemove(id);
+	res.json({ message: 'Note deleted successfully' });
 };

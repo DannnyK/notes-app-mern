@@ -1,5 +1,6 @@
-import * as api from "../api";
-import { FETCH_ALL, CREATE, DELETE, UPDATE } from "../constants/actionTypes";
+/* eslint-disable no-console */
+import * as api from '../api';
+import { CREATE, DELETE, FETCH_ALL, UPDATE } from '../constants/actionTypes';
 
 export const getNotes = () => async (dispatch) => {
 	try {

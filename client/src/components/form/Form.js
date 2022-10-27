@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { createNote, updateNote } from "../../actions/notes";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { createNote, updateNote } from '../../actions/note-actions';
 
 const Form = ({ currentId, setCurrentId }) => {
 	const [noteData, setNoteData] = useState({
-		title: "",
-		body: "",
+		title: '',
+		body: ''
 	});
 	const note = useSelector((state) =>
 		currentId ? state.notes.find((p) => p._id === currentId) : null
@@ -29,7 +29,7 @@ const Form = ({ currentId, setCurrentId }) => {
 
 	const clear = () => {
 		setCurrentId(null);
-		setNoteData({ title: "", body: "" });
+		setNoteData({ title: '', body: '' });
 	};
 
 	return (
@@ -39,7 +39,7 @@ const Form = ({ currentId, setCurrentId }) => {
 			onSubmit={handleSubmit}
 			className="form"
 		>
-			<h6>{currentId ? "Edit" : "Create"} a Note</h6>
+			<h6>{currentId ? 'Edit' : 'Create'} a Note</h6>
 			<textarea
 				cols="30"
 				label="title"

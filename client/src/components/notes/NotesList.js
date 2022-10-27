@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import { useSelector } from "react-redux";
-import Note from "./note/Note";
+import { useSelector } from 'react-redux';
+import Note from './note/Note';
 
 const Notes = ({ setCurrentId }) => {
 	const notes = useSelector((state) => state.notes);
