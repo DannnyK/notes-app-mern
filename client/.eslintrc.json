@@ -12,7 +12,7 @@
 	"overrides": [],
 	"rules": {
 		"no-undef": "error",
-		"comma-dangle": "error",
+		"comma-dangle": "warn",
 		"brace-style": "error",
 		"comma-spacing": "error",
 		"array-bracket-spacing": "error",
@@ -20,8 +20,8 @@
 		"no-duplicate-imports": "error",
 		"no-console": "warn",
 		"indent": ["error", "tab"],
-		"linebreak-style": ["error", "unix"],
 		"quotes": ["error", "single"],
-		"semi": ["error", "always"]
-	}
+		"semi": ["error", "always"],
+		"react/prop-types": "off"
+	} 
 }
