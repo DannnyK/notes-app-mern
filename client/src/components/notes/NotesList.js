@@ -4,12 +4,14 @@ import { useSelector } from 'react-redux';
 import Note from './note/Note';
 
 const Notes = ({ setCurrentId }) => {
-	const notes = useSelector((state) => state.notes);
+	const notes = useSelector(state => state.notes);
 	return !notes.length ? (
-		<h1>no notes</h1>
+		<div className="no-notes">
+			<h1>no notes</h1>
+		</div>
 	) : (
 		<div className="note-list">
-			{notes.map((note) => (
+			{notes.map(note => (
 				<div className="note" key={note._id}>
 					<Note note={note} setCurrentId={setCurrentId} />
 				</div>

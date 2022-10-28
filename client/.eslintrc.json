@@ -11,7 +11,7 @@
 	"plugins": ["react"],
 	"overrides": [],
 	"rules": {
-		"no-undef": "error",
+		"no-undef": "warn",
 		"comma-dangle": "warn",
 		"brace-style": "error",
 		"comma-spacing": "error",
@@ -20,8 +20,7 @@
 		"no-duplicate-imports": "error",
 		"no-console": "warn",
 		"indent": ["error", "tab"],
-		"quotes": ["error", "single"],
 		"semi": ["error", "always"],
-		"react/prop-types": "off"
+		"react/prop-types": "warn"
 	} 
 }
