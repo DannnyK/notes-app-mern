@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import './App.css';
-import { getNotes } from './actions/note-actions';
-import Notes from './components/notes/NotesList';
-import Form from './components/form/Form';
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import "./App.css";
+import { getNotes } from "./actions/note-actions";
+import Notes from "./components/notes/NotesList";
+import Form from "./components/form/Form";
 
 const App = () => {
 	const [currentId, setCurrentId] = useState(null);
@@ -20,9 +20,9 @@ const App = () => {
 			</nav>
 			<div className="view-panel">
 				<Notes setCurrentId={setCurrentId} />
-				<div className="edit-panel">
-					<Form currentId={currentId} setCurrentId={setCurrentId} />
-				</div>
+				{/* <div className="edit-panel"> */}
+				<Form currentId={currentId} setCurrentId={setCurrentId} />
+				{/* </div> */}
 			</div>
 		</div>
 	);

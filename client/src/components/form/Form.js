@@ -33,17 +33,17 @@ const Form = ({ currentId, setCurrentId }) => {
 
 	return (
 		<form autoComplete="off" noValidate onSubmit={handleSubmit} className="form">
-			<h2>{currentId ? "Edit" : "Create"} a Note</h2>
-			<input
+			{/* <h2>{currentId ? "Edit" : "Create"} a Note</h2> */}
+			{/* <input
 				type="text"
 				label="title"
 				name="title"
 				value={noteData.title}
 				placeholder="Title"
 				onChange={e => setNoteData({ ...noteData, title: e.target.value })}
-			/>
+			/> */}
 			<EditorComponent />
-			<textarea
+			{/* <textarea
 				cols="30"
 				label="body"
 				rows="10"
@@ -51,7 +51,7 @@ const Form = ({ currentId, setCurrentId }) => {
 				value={noteData.body}
 				placeholder="note"
 				onChange={e => setNoteData({ ...noteData, body: e.target.value })}
-			/>
+			/> */}
 			<button type="submit">submit</button>
 		</form>
 	);
