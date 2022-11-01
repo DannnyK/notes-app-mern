@@ -22,7 +22,7 @@ const LOCALDB_URL = "mongodb://localhost:27017/notes-app";
 const CONNECTION_URL = "mongodb+srv://Admin:9kDdv8sGG7pb97H@cluster0.esrb9kx.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose
-	.connect(CONNECTION_URL, {
+	.connect(LOCALDB_URL, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true
 	})

@@ -31,6 +31,8 @@ const Form = ({ currentId, setCurrentId }) => {
 		setNoteData({ title: "", body: "" });
 	};
 
+	console.log(noteData);
+
 	return (
 		<form autoComplete="off" noValidate onSubmit={handleSubmit} className="form">
 			{/* <h2>{currentId ? "Edit" : "Create"} a Note</h2> */}

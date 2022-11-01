@@ -12,6 +12,7 @@
 	"overrides": [],
 	"rules": {
 		"no-undef": "warn",
+		"no-unused-vars": "warn",
 		"comma-dangle": "warn",
 		"brace-style": "error",
 		"comma-spacing": "error",
@@ -21,6 +22,6 @@
 		"no-console": "warn",
 		"indent": ["error", "tab"],
 		"semi": ["error", "always"],
-		"react/prop-types": "warn"
-	} 
+		"react/prop-types": "off"
+	}
 }
