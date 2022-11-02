@@ -1,8 +1,9 @@
+/* eslint-disable no-console */
 import React from "react";
 import { Editor } from "react-draft-wysiwyg";
 import "../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
-//TODO complete implementation, figure out how to save data to backend
+//TODO complete implementation, figure out how to save data to backend, remove consolelogs
 //also remove comments
 
 const EditorComponent = () => {

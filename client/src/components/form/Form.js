@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createNote, updateNote } from "../../actions/note-actions";
+// eslint-disable-next-line no-unused-vars
 import EditorComponent from "./editor";
 
 import { ReactComponent as SubmitIcon } from "../icons/update.svg";
@@ -33,8 +34,6 @@ const Form = ({ currentId, setCurrentId }) => {
 		setCurrentId(null);
 		setNoteData({ title: "", body: "" });
 	};
-
-	console.log(noteData);
 
 	return (
 		<form autoComplete="off" noValidate onSubmit={handleSubmit} className="form">
