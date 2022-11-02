@@ -1,25 +1,23 @@
-import React from 'react';
-import moment from 'moment';
-import { useDispatch } from 'react-redux';
+import React from "react";
+import moment from "moment";
+import { useDispatch } from "react-redux";
 
-import { deleteNote } from '../../../actions/note-actions';
+import { ReactComponent as Trash } from "../../icons/trash-solid.svg";
+
+import { deleteNote } from "../../../actions/note-actions";
 
 const Note = ({ note, setCurrentId }) => {
 	const dispatch = useDispatch();
 
 	return (
 		<>
-			<div className="note-header">
-				<h1>{note.title}</h1>
-			</div>
-
 			<div className="note-body" onClick={() => setCurrentId(note._id)}>
+				<p>{note.title}</p>
 				{note.body}
 			</div>
-
 			<div className="note-footer">
 				<span>{moment(note.createdAt).fromNow()}</span>
-				<button onClick={() => dispatch(deleteNote(note._id))}>Delete</button>
+				<Trash onClick={() => dispatch(deleteNote(note._id))} />
 			</div>
 		</>
 	);

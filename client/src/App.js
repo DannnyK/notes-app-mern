@@ -15,14 +15,11 @@ const App = () => {
 
 	return (
 		<div className="main">
-			<nav className="menu-bar">
-				<h1>Menu Bar</h1>
-			</nav>
 			<div className="view-panel">
 				<Notes setCurrentId={setCurrentId} />
-				{/* <div className="edit-panel"> */}
-				<Form currentId={currentId} setCurrentId={setCurrentId} />
-				{/* </div> */}
+				<div className="edit-panel">
+					<Form currentId={currentId} setCurrentId={setCurrentId} />
+				</div>
 			</div>
 		</div>
 	);

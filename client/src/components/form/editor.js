@@ -20,8 +20,29 @@ const EditorComponent = () => {
 			placeholder="Text"
 			wrapperClassName="editor-wrapper"
 			editorClassName="editor-component"
-			editorStyle={{ height: "400px", width: "100%", background: "white" }}
-			toolbarStyle={{ height: "fit-content", widht: "100%", background: "white" }}
+			wrapperStyle={{
+				height: "90%"
+				// borderRadius: "25px",
+				// background: "#7083a9",
+				// padding: "10px",
+				// boxShadow: "5px 5px 10px #586786, -5px -5px 10px #889fcc"
+			}}
+			editorStyle={{
+				padding: "10px",
+				height: "86%",
+				width: "100%",
+				borderRadius: "25px",
+				background: "#7083a9",
+				boxShadow: "inset 5px 5px 10px #586786,	inset -5px -5px 10px #889fcc",
+				marginTop: "10px"
+			}}
+			toolbarStyle={{
+				height: "fit-content",
+				widht: "100%",
+				borderRadius: "25px",
+				background: "#7083a9",
+				boxShadow: "inset 5px 5px 10px #586786,	inset -5px -5px 10px #889fcc"
+			}}
 			onChange={contentState => contentStateChanged(contentState)}
 		/>
 	);

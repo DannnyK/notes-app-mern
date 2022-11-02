@@ -6,7 +6,7 @@
 	width: 100%;
 }
 body {
-	background-color: #c1b4ae;
+	background-color: #7083a9;
 }
 
 .menu-bar {
@@ -22,13 +22,16 @@ body {
 }
 
 .view-panel {
+	font-family: "Varela Round", sans-serif;
 	display: flex;
-	background-color: #c1b4ae;
-	height: 90%;
-	padding-top: 10px;
-	width: 100%;
-	justify-content: center;
+	height: 100%;
+	padding: 10px;
+	max-width: 100%;
+	justify-content: space-evenly;
 	align-items: center;
+	/* border-radius: 10px;
+	background: #7083a9;
+	box-shadow: 20px 20px 60px #586786, -20px -20px 60px #889fcc; */
 }
 
 .note-list {
@@ -36,136 +39,216 @@ body {
 	justify-content: flex-start;
 	align-items: center;
 	flex-direction: column;
-	background-color: #353238;
 	padding: 10px;
 	margin-right: 5px;
 	color: #0a090c;
-	border-radius: 10px;
-	box-shadow: inset 0 3px 10px rgb(0 0 0 / 0.2);
-	height: 100%;
-	width: 200pt;
+	height: 95%;
+	width: 20%;
 	max-width: 20%;
 	overflow-y: auto;
-}
-
-.editor-component {
-	height: 400px;
-	width: 100%;
-	background: white;
-}
-
-.editor-wrapper {
-	height: 100%;
-	width: 100%;
+	border-radius: 25px;
+	background: #7083a9;
+	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
 }
 
 .edit-panel {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 	background-color: #353238;
 	padding: 10px;
 	color: #0a090c;
-	border-radius: 10px;
-	box-shadow: inset 0 3px 10px rgb(0 0 0 / 0.2);
-	height: 97%;
+	height: 95%;
 	width: 75%;
+	border-radius: 25px;
+	background: #7083a9;
+	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
 }
 
 .note {
+	color: white;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
 	border-radius: 10px;
 	background-color: #be5a38;
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-	max-height: 20%;
+	max-height: 40%;
 	width: 100%;
-	margin-bottom: 7px;
+	margin-bottom: 15px;
+	border-radius: 25px;
+	background: #7083a9;
+	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
 }
-
-.note-header {
-	border-top-right-radius: inherit;
-	border-top-left-radius: inherit;
-	background-color: #b6b6b617;
-	box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.092);
-}
-
-.note-header h1 {
-	font-size: medium;
-	padding: 0;
-	background-color: #92140c;
+.note-body p {
+	font-weight: 600;
+	text-align: center;
 }
 
 .note-body {
 	display: flex;
-	padding: 3px;
-	height: 5em;
+	flex-direction: column;
+	text-align: left;
+	padding: 3px 5px;
+	height: fit-content;
+	overflow-wrap: break-word;
 }
 
 .note-footer {
+	font-weight: 100;
+	font-size: 12px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	background-color: #b6b6b65b;
 	border-bottom-right-radius: inherit;
 	border-bottom-left-radius: inherit;
-	box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
 	padding: 5px 0px;
-	background-color: #92140c;
+}
+
+.note-footer svg {
+	width: 10px;
+	transition: 200ms;
+	fill: white;
+	border: 0px solid black;
+	padding: 10px 15px;
+	border-radius: 15px;
+	background: linear-gradient(145deg, #788cb5, #657698);
+	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
+	transition: 200ms;
+}
+.note-footer svg:hover {
+	fill: rgb(255, 96, 47);
+}
+.note-footer svg:active {
+	transform: scale(110%);
+	border-radius: 25px;
+	background: linear-gradient(145deg, #657698, #788cb5);
+	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
+}
+
+.note-footer button {
+	border: 0px solid black;
+	border-radius: 5px;
+	background: linear-gradient(145deg, #788cb5, #657698);
+	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
+	transition: 200ms;
+}
+.note-footer button:active {
+	border-radius: 6px;
+	background: linear-gradient(145deg, #657698, #788cb5);
+	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
 }
 
 .no-notes {
+	color: white;
 	width: fit-content;
-	border-radius: 10px;
-	background-color: #be5a38;
-	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 	margin-right: 20px;
 	padding: 0px 20px;
+	border-radius: 25px;
+	background: #7083a9;
+	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
 }
 
 .form {
+	display: flex;
 	text-align: center;
 	flex-direction: column;
 	width: 100%;
 	height: 100%;
 }
 
+.submit-btn {
+	width: max-content;
+	height: 20px;
+	border: 0px solid black;
+	padding: 10px 20px;
+	border-radius: 15px;
+	background: linear-gradient(145deg, #788cb5, #657698);
+	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
+	transition: 200ms;
+}
+
+.submit-btn:hover {
+}
+.submit-btn:active {
+	transform: scale(110%);
+	border-radius: 25px;
+	background: linear-gradient(145deg, #657698, #788cb5);
+	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
+}
+
 .form h2 {
+	color: aliceblue;
 	border-radius: 10px;
 	border: 0px solid rgba(0, 0, 0, 0);
 	background-color: white;
 	margin: auto;
 	width: fit-content;
-	padding: 5px;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+	padding: 0.5rem 1rem;
 	margin-bottom: 10px;
+	border-radius: 25px;
+	background: linear-gradient(145deg, #788cb5, #657698);
+	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
 }
 
 .form input {
+	color: white;
+	font-family: "Varela Round", sans-serif;
+	font-weight: 600;
 	text-align: center;
-	border-radius: 25px 25px 0px 0px;
 	border: 0px solid rgba(0, 0, 0, 0);
 	height: 50px;
 	box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+	border-radius: 25px 25px 0px 0px;
+	background: #7083a9;
+	box-shadow: inset 5px 5px 10px #586786, inset -5px -5px 10px #889fcc;
+	transition: all 200ms;
 }
 .form textarea {
+	color: white;
+	font-family: "Varela Round", sans-serif;
+	font-size: small;
+	text-align: left;
+	font-weight: 300;
 	text-align: center;
-	border-radius: 0px 0px 25px 25px;
 	border: 0px solid rgba(0, 0, 0, 0);
 	box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
 	height: 100%;
 	margin-bottom: 10px;
+	border-radius: 0px 0px 25px 25px;
+	background: #7083a9;
+	box-shadow: inset 5px 5px 10px #586786, inset -5px -5px 10px #889fcc;
+	transition: all 200ms;
+}
+textarea:hover,
+input:hover {
+	outline: none;
+	border-radius: 25px;
+	transform: scale(101%);
+}
+textarea:focus,
+input:focus {
+	outline: none;
+	border-radius: 25px;
 }
 
 .form button {
-	border-radius: 20px;
 	border: 0px solid black;
 	height: 50px;
 	width: fit-content;
 	padding: 0px 10px;
-	background-color: green;
+	border-radius: 15px;
+	background: linear-gradient(145deg, #788cb5, #657698);
+	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
+	transition: 200ms;
 	/* TODO remove comments */
+}
+
+.form button:active {
+	border-radius: 25px;
+	background: linear-gradient(145deg, #657698, #788cb5);
+	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
 }
 
 .wrapper-class {
