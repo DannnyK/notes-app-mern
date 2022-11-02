@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { createNote, updateNote } from "../../actions/note-actions";
 import EditorComponent from "./editor";
 
-import submit from "../icons/paper-plane-solid.svg";
+import { ReactComponent as SubmitIcon } from "../icons/update.svg";
+import { ReactComponent as SaveIcon } from "../icons/save.svg";
 
 const Form = ({ currentId, setCurrentId }) => {
 	const [noteData, setNoteData] = useState({
@@ -37,7 +38,7 @@ const Form = ({ currentId, setCurrentId }) => {
 
 	return (
 		<form autoComplete="off" noValidate onSubmit={handleSubmit} className="form">
-			<h2>{currentId ? "Edit" : "Create"} a Note</h2>
+			<h2 className="unselectable">{currentId ? "Editing" : "Make a new note"}</h2>
 			<input
 				type="text"
 				label="title"
@@ -46,6 +47,7 @@ const Form = ({ currentId, setCurrentId }) => {
 				placeholder="What do you want your note to be called?"
 				onChange={e => setNoteData({ ...noteData, title: e.target.value })}
 			/>
+			{/* //TODO resolve comments in this file */}
 			{/* <EditorComponent /> */}
 			<textarea
 				cols="30"
@@ -56,8 +58,11 @@ const Form = ({ currentId, setCurrentId }) => {
 				placeholder="Type your note..."
 				onChange={e => setNoteData({ ...noteData, body: e.target.value })}
 			/>
-			{/* <button type="submit"> */}
-			<img src={submit} alt="" className="submit-btn" onClick={handleSubmit} />.{/* </button> */}
+			{currentId ? (
+				<SubmitIcon className="submit-btn" onClick={handleSubmit} />
+			) : (
+				<SaveIcon className="submit-btn" onClick={handleSubmit} />
+			)}
 		</form>
 	);
 };

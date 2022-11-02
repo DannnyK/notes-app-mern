@@ -29,9 +29,6 @@ body {
 	max-width: 100%;
 	justify-content: space-evenly;
 	align-items: center;
-	/* border-radius: 10px;
-	background: #7083a9;
-	box-shadow: 20px 20px 60px #586786, -20px -20px 60px #889fcc; */
 }
 
 .note-list {
@@ -49,6 +46,14 @@ body {
 	border-radius: 25px;
 	background: #7083a9;
 	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
+}
+.info {
+	color: #0a090c38;
+	user-select: none;
+}
+
+.unselectable {
+	user-select: none;
 }
 
 .edit-panel {
@@ -72,7 +77,6 @@ body {
 	flex-direction: column;
 	text-align: center;
 	border-radius: 10px;
-	background-color: #be5a38;
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 	max-height: 40%;
 	width: 100%;
@@ -80,7 +84,16 @@ body {
 	border-radius: 25px;
 	background: #7083a9;
 	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
+	transition: 200ms, transform 50ms;
 }
+.note:hover {
+	color: #183153;
+}
+
+.note:active {
+	transform: scale(98%);
+}
+
 .note-body p {
 	font-weight: 600;
 	text-align: center;
@@ -93,25 +106,33 @@ body {
 	padding: 3px 5px;
 	height: fit-content;
 	overflow-wrap: break-word;
+	overflow-y: auto;
+}
+
+.note-body {
+	scrollbar-width: thin;
+	scrollbar-color: #404b60 #99b3e5;
 }
 
 .note-footer {
+	align-items: center;
 	font-weight: 100;
 	font-size: 12px;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: space-between;
 	border-bottom-right-radius: inherit;
 	border-bottom-left-radius: inherit;
-	padding: 5px 0px;
+	padding: 0.5em 1em;
 }
 
 .note-footer svg {
-	width: 10px;
+	width: 15px;
 	transition: 200ms;
 	fill: white;
 	border: 0px solid black;
 	padding: 10px 15px;
+	margin-bottom: 5px;
 	border-radius: 15px;
 	background: linear-gradient(145deg, #788cb5, #657698);
 	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
@@ -141,10 +162,14 @@ body {
 }
 
 .no-notes {
-	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: #183153;
 	width: fit-content;
-	margin-right: 20px;
-	padding: 0px 20px;
+	margin: 20px;
+	padding: 20px;
 	border-radius: 25px;
 	background: #7083a9;
 	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
@@ -159,6 +184,7 @@ body {
 }
 
 .submit-btn {
+	fill: white;
 	width: max-content;
 	height: 20px;
 	border: 0px solid black;
@@ -166,13 +192,13 @@ body {
 	border-radius: 15px;
 	background: linear-gradient(145deg, #788cb5, #657698);
 	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
-	transition: 200ms;
+	transition: 100ms, fill 300ms ease-in-out;
 }
 
 .submit-btn:hover {
+	fill: rgb(132, 255, 132);
 }
 .submit-btn:active {
-	transform: scale(110%);
 	border-radius: 25px;
 	background: linear-gradient(145deg, #657698, #788cb5);
 	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
@@ -193,9 +219,10 @@ body {
 }
 
 .form input {
-	color: white;
 	font-family: "Varela Round", sans-serif;
+	color: rgba(255, 255, 255, 0.5);
 	font-weight: 600;
+	font-size: 1em;
 	text-align: center;
 	border: 0px solid rgba(0, 0, 0, 0);
 	height: 50px;
@@ -206,10 +233,9 @@ body {
 	transition: all 200ms;
 }
 .form textarea {
-	color: white;
 	font-family: "Varela Round", sans-serif;
-	font-size: small;
-	text-align: left;
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 0.9em;
 	font-weight: 300;
 	text-align: center;
 	border: 0px solid rgba(0, 0, 0, 0);
@@ -219,13 +245,18 @@ body {
 	border-radius: 0px 0px 25px 25px;
 	background: #7083a9;
 	box-shadow: inset 5px 5px 10px #586786, inset -5px -5px 10px #889fcc;
+	resize: none;
 	transition: all 200ms;
 }
-textarea:hover,
+textarea:hover {
+	outline: none;
+	border-radius: 0px 0px 10px 10px;
+	color: #ffffff;
+}
 input:hover {
 	outline: none;
-	border-radius: 25px;
-	transform: scale(101%);
+	border-radius: 10px 10px 0px 0px;
+	color: #ffffff;
 }
 textarea:focus,
 input:focus {
@@ -242,7 +273,6 @@ input:focus {
 	background: linear-gradient(145deg, #788cb5, #657698);
 	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
 	transition: 200ms;
-	/* TODO remove comments */
 }
 
 .form button:active {
