@@ -1,6 +1,7 @@
 import React from "react";
 
 import { useSelector } from "react-redux";
+import Searching from "../searching-wifi/Searching";
 import Triangle from "../triangle/Triangle";
 import Note from "./note/Note";
 

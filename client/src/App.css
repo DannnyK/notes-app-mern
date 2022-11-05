@@ -74,8 +74,8 @@ body {
 .note {
 	color: white;
 	display: flex;
+	justify-content: center;
 	flex-direction: column;
-	text-align: center;
 	border-radius: 10px;
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 	max-height: 40%;
@@ -86,27 +86,36 @@ body {
 	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
 	transition: 200ms, transform 50ms;
 }
-.note:hover {
+/* .note:hover {
 	color: #183153;
-}
+} */
 
 .note:active {
 	transform: scale(98%);
 }
 
 .note-body p {
-	font-weight: 600;
-	text-align: center;
+	font-weight: 800;
+	font-style: italic;
 }
 
 .note-body {
 	display: flex;
 	flex-direction: column;
 	text-align: left;
-	padding: 3px 5px;
+	padding: 3px 10px;
 	height: fit-content;
 	overflow-wrap: break-word;
 	overflow-y: auto;
+	transition: 200ms;
+	border-radius: 25px 25px 0px 0px;
+}
+
+.note-body:hover {
+	/* transform: translateY(-15%); */
+	border-radius: 25px 25px 0px 0px;
+	background: #95aee0;
+	/* box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc; */
 }
 
 .note-body {
@@ -183,6 +192,10 @@ body {
 	height: 100%;
 }
 
+.logo {
+	height: 50px;
+}
+
 .submit-btn {
 	fill: white;
 	width: max-content;
@@ -205,14 +218,16 @@ body {
 }
 
 .form h2 {
+	display: flex;
+	align-items: center;
 	color: aliceblue;
 	border-radius: 10px;
 	border: 0px solid rgba(0, 0, 0, 0);
 	background-color: white;
-	margin: auto;
 	width: fit-content;
 	padding: 0.5rem 1rem;
-	margin-bottom: 10px;
+	margin: 0.5em 0.5em;
+	margin-bottom: 1em;
 	border-radius: 25px;
 	background: linear-gradient(145deg, #788cb5, #657698);
 	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
@@ -252,16 +267,31 @@ textarea:hover {
 	outline: none;
 	border-radius: 0px 0px 10px 10px;
 	color: #ffffff;
+	background-color: #a4b5d9;
 }
 input:hover {
 	outline: none;
+	background-color: #a4b5d9;
 	border-radius: 10px 10px 0px 0px;
 	color: #ffffff;
 }
-textarea:focus,
+textarea:focus {
+	outline: none;
+	border-radius: 0px 0px 50px 50px;
+}
 input:focus {
 	outline: none;
-	border-radius: 25px;
+	border-radius: 50px 50px 0px 0px;
+}
+
+.form-footer {
+	display: flex;
+	justify-content: end;
+}
+
+.form-header {
+	display: flex;
+	justify-content: space-between;
 }
 
 .form button {
@@ -280,19 +310,48 @@ input:focus {
 	background: linear-gradient(145deg, #657698, #788cb5);
 	box-shadow: 5px 5px 10px #586786, -5px -5px 10px #889fcc;
 }
-
-.wrapper-class {
-	display: flex;
-	flex-direction: row;
-	background-color: wheat;
+@media screen and (max-width: 750px) {
+	body {
+		padding: 0%;
+	}
+	.view-panel {
+		width: 100%;
+		padding: 0px;
+	}
 }
 
-.toolbar-class {
-	display: flex;
-	flex-direction: row;
+@media screen and (max-width: 650px) {
+	.view-panel {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		width: 100%;
+		padding: 0px;
+	}
+
+	.note-list {
+		height: 100%;
+		width: 50%;
+	}
+	.edit-panel {
+		height: 100%;
+		width: 500px;
+	}
+	.form-header {
+		visibility: hidden;
+	}
 }
-.editor-class {
-	display: flex;
-	flex-direction: column;
-	height: 500px;
+
+@media screen and (max-width: 500px) {
+	.view-panel {
+		display: flex;
+		flex-direction: column;
+	}
+	.view-panel {
+		width: 100vw;
+	}
+
+	.note-list {
+		width: 100vw;
+	}
 }
