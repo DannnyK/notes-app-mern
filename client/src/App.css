@@ -41,7 +41,7 @@ body {
 	color: #0a090c;
 	height: 95%;
 	width: 20%;
-	max-width: 20%;
+	/* max-width: 20%; */
 	overflow-y: auto;
 	border-radius: 25px;
 	background: #7083a9;
@@ -50,10 +50,23 @@ body {
 .info {
 	color: #0a090c38;
 	user-select: none;
+	transition: 200ms ease-in;
+}
+
+.info:hover {
+	color: rgb(255, 255, 255);
+}
+.info:active {
+	color: rgb(255, 0, 0);
 }
 
 .unselectable {
 	user-select: none;
+	transition: 500ms ease-in;
+}
+
+.unselectable:active {
+	color: rgb(255, 0, 0);
 }
 
 .edit-panel {
@@ -238,7 +251,7 @@ body {
 	color: rgba(255, 255, 255, 0.5);
 	font-weight: 600;
 	font-size: 1em;
-	text-align: center;
+	text-align: inherit;
 	border: 0px solid rgba(0, 0, 0, 0);
 	height: 50px;
 	box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
@@ -252,7 +265,7 @@ body {
 	color: rgba(255, 255, 255, 0.5);
 	font-size: 0.9em;
 	font-weight: 300;
-	text-align: center;
+	text-align: inherit;
 	border: 0px solid rgba(0, 0, 0, 0);
 	box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
 	height: 100%;
@@ -267,11 +280,11 @@ textarea:hover {
 	outline: none;
 	border-radius: 0px 0px 10px 10px;
 	color: #ffffff;
-	background-color: #a4b5d9;
+	background-color: #7689ad;
 }
 input:hover {
 	outline: none;
-	background-color: #a4b5d9;
+	background-color: #7689ad;
 	border-radius: 10px 10px 0px 0px;
 	color: #ffffff;
 }
@@ -286,7 +299,7 @@ input:focus {
 
 .form-footer {
 	display: flex;
-	justify-content: end;
+	justify-content: flex-end;
 }
 
 .form-header {
@@ -318,6 +331,26 @@ input:focus {
 		width: 100%;
 		padding: 0px;
 	}
+	.edit-panel {
+		width: 50%;
+	}
+
+	.note-list {
+		width: 50%;
+	}
+
+	.form-header {
+		visibility: hidden;
+		height: 0px;
+	}
+	.form {
+		text-align: left;
+	}
+	.form input {
+		text-align: center;
+		font-size: 0.7em;
+		font-weight: 100;
+	}
 }
 
 @media screen and (max-width: 650px) {
@@ -335,7 +368,7 @@ input:focus {
 	}
 	.edit-panel {
 		height: 100%;
-		width: 500px;
+		width: 50%;
 	}
 	.form-header {
 		visibility: hidden;
@@ -346,12 +379,26 @@ input:focus {
 	.view-panel {
 		display: flex;
 		flex-direction: column;
-	}
-	.view-panel {
 		width: 100vw;
 	}
 
 	.note-list {
-		width: 100vw;
+		width: 95%;
+		padding: 0px;
+		margin: 0px;
+		height: 60%;
+	}
+
+	.edit-panel {
+		width: 95%;
+		height: 40%;
+	}
+
+	.form input {
+		color: white;
+	}
+
+	.form textarea {
+		height: 50%;
 	}
 }

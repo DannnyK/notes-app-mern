@@ -1,14 +1,19 @@
 import React from "react";
 import moment from "moment";
 import { useDispatch } from "react-redux";
-
 import { ReactComponent as Trash } from "../../icons/trash-solid.svg";
-
 import { deleteNote } from "../../../actions/note-actions";
 
 const Note = ({ note, setCurrentId }) => {
 	const dispatch = useDispatch();
-
+	function deleteNoteConfirm() {
+		let confirm = prompt("are you sure? (y/n)");
+		if (confirm.toLowerCase() === "y") {
+			dispatch(deleteNote(note._id));
+		} else {
+			alert(`Ok, ${note.title} won't be deleted :)`);
+		}
+	}
 	return (
 		<>
 			<div className="note-body" onClick={() => setCurrentId(note._id)}>
@@ -17,7 +22,7 @@ const Note = ({ note, setCurrentId }) => {
 			</div>
 			<div className="note-footer">
 				<span>{moment(note.createdAt).fromNow()}</span>
-				<Trash onClick={() => dispatch(deleteNote(note._id))} />
+				<Trash onClick={deleteNoteConfirm} />
 			</div>
 		</>
 	);

@@ -23,6 +23,7 @@ const EditorComponent = ({ currentId, setCurrentId }) => {
 
 	const handleSubmit = e => {
 		e.preventDefault();
+		contentStateChanged();
 
 		if (currentId) {
 			dispatch(updateNote(currentId, noteData));
