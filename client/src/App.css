@@ -72,6 +72,11 @@ body {
 	backdrop-filter: blur(30px);
 }
 
+.quill-editor {
+	height: 100%;
+	width: 100%;
+}
+
 .note {
 	color: white;
 	display: flex;

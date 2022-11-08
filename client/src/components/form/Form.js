@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createNote, updateNote } from "../../actions/note-actions";
 // eslint-disable-next-line no-unused-vars
 import Editor from "./editor";
+import QuillEditor from "./QuillEditor";
 
 import { ReactComponent as SubmitIcon } from "../icons/update.svg";
 import { ReactComponent as SaveIcon } from "../icons/save.svg";
@@ -62,7 +63,8 @@ const Form = ({ currentId, setCurrentId }) => {
 				placeholder="Type your note..."
 				onChange={e => setNoteData({ ...noteData, body: e.target.value })}
 			/> */}
-			<Editor />
+			{/* <Editor /> */}
+			<QuillEditor />
 			<div className="form-footer">
 				{currentId ? (
 					<SubmitIcon className="submit-btn" onClick={handleSubmit} />

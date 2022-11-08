@@ -34,7 +34,8 @@
 		"eslint": "8.26.0",
 		"eslint-config-prettier": "8.5.0",
 		"eslint-plugin-react": "^7.31.10",
-		"prettier": "2.7.1"
+		"prettier": "2.7.1",
+		"react-quill": "2.0.0"
 	},
 	"eslintConfig": {
 		"extends": [
