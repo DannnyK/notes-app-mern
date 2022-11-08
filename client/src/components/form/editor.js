@@ -1,85 +1,45 @@
-/* eslint-disable no-console */
-import React, { useEffect, useState } from "react";
-import { Editor } from "react-draft-wysiwyg";
-import "../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import React from "react";
 
-import { useDispatch, useSelector } from "react-redux";
-import { createNote, updateNote } from "../../actions/note-actions";
+// Require Editor CSS files.
+import "froala-editor/css/froala_style.min.css";
+import "froala-editor/css/froala_editor.pkgd.min.css";
 
-//TODO complete implementation, figure out how to save data to backend, remove consolelogs
-//also remove comments
+import FroalaEditorComponent from "react-froala-wysiwyg";
 
-const EditorComponent = ({ currentId, setCurrentId }) => {
-	const [noteData, setNoteData] = useState({
-		title: "",
-		body: ""
-	});
-	const note = useSelector(state => (currentId ? state.notes.find(p => p._id === currentId) : null));
-	const dispatch = useDispatch();
-
-	useEffect(() => {
-		if (note) setNoteData(note);
-	}, [note]);
-
-	const handleSubmit = e => {
-		e.preventDefault();
-		contentStateChanged();
-
-		if (currentId) {
-			dispatch(updateNote(currentId, noteData));
-		} else {
-			dispatch(createNote(noteData));
-		}
-		clear();
-	};
-
-	const clear = () => {
-		setCurrentId(null);
-		setNoteData({ title: "", body: "" });
-	};
-	function contentStateChanged(payload) {
-		var data = JSON.stringify(payload);
-		// console.log(data);
-
-		getContentStateObject(data);
-	}
-
-	function getContentStateObject(jsonData) {
-		var obj = JSON.parse(jsonData);
-		console.log("contentState object", obj.blocks[0].text);
-	}
-
+const editor = () => {
 	return (
-		<Editor
-			placeholder="Text"
-			wrapperClassName="editor-wrapper"
-			editorClassName="editor-component"
-			wrapperStyle={{
-				height: "90%"
-				// borderRadius: "25px",
-				// background: "#7083a9",
-				// padding: "10px",
-				// boxShadow: "5px 5px 10px #586786, -5px -5px 10px #889fcc"
-			}}
-			editorStyle={{
-				padding: "10px",
-				height: "86%",
-				width: "100%",
-				borderRadius: "25px",
-				background: "#7083a9",
-				boxShadow: "inset 5px 5px 10px #586786,	inset -5px -5px 10px #889fcc",
-				marginTop: "10px"
-			}}
-			toolbarStyle={{
-				height: "fit-content",
-				widht: "100%",
-				borderRadius: "25px",
-				background: "#7083a9",
-				boxShadow: "inset 5px 5px 10px #586786,	inset -5px -5px 10px #889fcc"
-			}}
-			onChange={handleSubmit}
-		/>
+		<>
+			<FroalaEditorComponent tag="textarea" />
+		</>
 	);
 };
 
-export default EditorComponent;
+export default editor;
+
+// Import all Froala Editor plugins;
+// import 'froala-editor/js/plugins.pkgd.min.js';
+
+// Import a single Froala Editor plugin.
+// import 'froala-editor/js/plugins/align.min.js';
+
+// Import a language file.
+// import 'froala-editor/js/languages/de.js';
+
+// Import a third-party plugin.
+// import 'froala-editor/js/third_party/image_tui.min.js';
+// import 'froala-editor/js/third_party/embedly.min.js';
+// import 'froala-editor/js/third_party/spell_checker.min.js';
+
+// Include font-awesome css if required.
+// install using "npm install font-awesome --save"
+// import 'font-awesome/css/font-awesome.css';
+// import 'froala-editor/js/third_party/font_awesome.min.js';
+
+// Include special components if required.
+// import FroalaEditorView from 'react-froala-wysiwyg/FroalaEditorView';
+// import FroalaEditorA from 'react-froala-wysiwyg/FroalaEditorA';
+// import FroalaEditorButton from 'react-froala-wysiwyg/FroalaEditorButton';
+// import FroalaEditorImg from 'react-froala-wysiwyg/FroalaEditorImg';
+// import FroalaEditorInput from 'react-froala-wysiwyg/FroalaEditorInput';
+
+// Render Froala Editor component.

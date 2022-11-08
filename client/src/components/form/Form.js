@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createNote, updateNote } from "../../actions/note-actions";
 // eslint-disable-next-line no-unused-vars
-import EditorComponent from "./editor";
+import Editor from "./editor";
 
 import { ReactComponent as SubmitIcon } from "../icons/update.svg";
 import { ReactComponent as SaveIcon } from "../icons/save.svg";
@@ -45,7 +45,7 @@ const Form = ({ currentId, setCurrentId }) => {
 				</h2>
 				<h2 className="unselectable">{currentId ? "Editing" : "Make a new note"}</h2>
 			</div>
-			<input
+			{/* <input
 				type="text"
 				label="title"
 				name="title"
@@ -53,8 +53,6 @@ const Form = ({ currentId, setCurrentId }) => {
 				placeholder="What do you want your note to be called?"
 				onChange={e => setNoteData({ ...noteData, title: e.target.value })}
 			/>
-			{/* //TODO resolve comments in this file */}
-			{/* <EditorComponent /> */}
 			<textarea
 				cols="30"
 				label="body"
@@ -63,7 +61,8 @@ const Form = ({ currentId, setCurrentId }) => {
 				value={noteData.body}
 				placeholder="Type your note..."
 				onChange={e => setNoteData({ ...noteData, body: e.target.value })}
-			/>
+			/> */}
+			<Editor />
 			<div className="form-footer">
 				{currentId ? (
 					<SubmitIcon className="submit-btn" onClick={handleSubmit} />
