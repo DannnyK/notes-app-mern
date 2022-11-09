@@ -6,6 +6,11 @@ import { deleteNote } from "../../../actions/note-actions";
 
 const Note = ({ note, setCurrentId }) => {
 	const dispatch = useDispatch();
+
+	const deleteNoteTest = () => {
+		dispatch(deleteNote(note._id));
+	};
+
 	function deleteNoteConfirm() {
 		let confirm = prompt("are you sure? (y/n)");
 		if (confirm.toLowerCase() === "y") {
@@ -22,7 +27,7 @@ const Note = ({ note, setCurrentId }) => {
 			</div>
 			<div className="note-footer">
 				<span>{moment(note.createdAt).fromNow()}</span>
-				<Trash onClick={deleteNoteConfirm} />
+				<Trash onClick={deleteNoteTest} />
 			</div>
 		</>
 	);

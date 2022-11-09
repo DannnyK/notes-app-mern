@@ -144,6 +144,7 @@ body {
 	margin-bottom: 5px;
 	border-radius: 15px;
 	transition: 200ms;
+	margin-top: 30px;
 }
 .note-footer svg:hover {
 	fill: rgb(255, 96, 47);

@@ -37,14 +37,15 @@ const Form = ({ currentId, setCurrentId }) => {
 	};
 
 	return (
-		<form autoComplete="off" noValidate onSubmit={handleSubmit} className="form">
-			<div className="form-header">
-				<h2 className="unselectable">
-					<img className="logo" src={Logo} alt="Daniel Kruger logo" />
-					Notes App
-				</h2>
-				<h2 className="unselectable">{currentId ? "Editing" : "Make a new note"}</h2>
-			</div>
+		<>
+			{/* <form autoComplete="off" noValidate onSubmit={handleSubmit} className="form">
+				<div className="form-header">
+					<h2 className="unselectable">
+						<img className="logo" src={Logo} alt="Daniel Kruger logo" />
+						Notes App
+					</h2>
+					<h2 className="unselectable">{currentId ? "Editing" : "Make a new note"}</h2>
+				</div> */}
 			{/* <input
 				type="text"
 				label="title"
@@ -64,14 +65,15 @@ const Form = ({ currentId, setCurrentId }) => {
 			/> */}
 			{/* <Editor /> */}
 			<QuillEditor />
-			<div className="form-footer">
-				{currentId ? (
-					<SubmitIcon className="submit-btn" onClick={handleSubmit} />
-				) : (
-					<SaveIcon className="submit-btn" onClick={handleSubmit} />
-				)}
-			</div>
-		</form>
+			{/* <div className="form-footer">
+					{currentId ? (
+						<SubmitIcon className="submit-btn" onClick={handleSubmit} />
+					) : (
+						<SaveIcon className="submit-btn" onClick={handleSubmit} />
+					)}
+				</div> */}
+			{/* </form> */}
+		</>
 	);
 };
 
