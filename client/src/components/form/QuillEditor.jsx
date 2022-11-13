@@ -4,13 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { createNote, updateNote } from "../../actions/note-actions";
 import "react-quill/dist/quill.snow.css";
 
-//remove
-import { ReactComponent as SubmitIcon } from "../icons/update.svg";
-import { ReactComponent as SaveIcon } from "../icons/save.svg";
-
 export default function QuillEditor({ currentId, setCurrentId }) {
 	const [noteData, setNoteData] = useState({
-		title: "",
 		body: ""
 	});
 	const note = useSelector(state => (currentId ? state.notes.find(p => p._id === currentId) : null));
@@ -60,30 +55,38 @@ export default function QuillEditor({ currentId, setCurrentId }) {
 		"video"
 	];
 
-	function handleChange(html) {
-		setNoteData({ ...noteData, body: html });
-		handleSubmit();
+	function handleChange(data) {
+		setNoteData({ ...noteData, body: data });
+		handleSubmit(noteData);
 	}
+
+	function clear() {
+		setCurrentId(null);
+	}
+
+	function makeNote(data) {
+		const newNote = setNoteData({ ...noteData, body: data });
+		handleSubmit(newNote);
+	}
+
+	//navbar
+	//editor
+	//save timer(autosave)
 
 	return (
 		<>
-			<ReactQuill
-				className=""
-				theme={"snow"}
-				onChange={handleChange}
-				value={noteData.body}
-				modules={modules}
-				formats={formats}
-				bounds={".app"}
-				placeholder={"whatever"}
-			/>
-			<div className="form-footer">
-				{currentId ? (
-					<SubmitIcon className="submit-btn" onClick={handleSubmit} />
-				) : (
-					<SaveIcon className="submit-btn" onClick={handleSubmit} />
-				)}
-			</div>
+			<form className="form" onAbort={clear}>
+				<ReactQuill
+					className="form"
+					theme={"snow"}
+					onChange={makeNote}
+					value={noteData.body}
+					modules={modules}
+					formats={formats}
+					bounds={".app"}
+					placeholder={"Type your damn note"}
+				/>
+			</form>
 		</>
 	);
 }

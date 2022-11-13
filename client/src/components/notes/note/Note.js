@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 import { useDispatch } from "react-redux";
-import { ReactComponent as Trash } from "../../icons/trash-solid.svg";
+import { ReactComponent as TrashIcon } from "../../icons/trash-solid.svg";
 import { deleteNote } from "../../../actions/note-actions";
 
 const Note = ({ note, setCurrentId }) => {
@@ -27,7 +27,7 @@ const Note = ({ note, setCurrentId }) => {
 			</div>
 			<div className="note-footer">
 				<span>{moment(note.createdAt).fromNow()}</span>
-				<Trash onClick={deleteNoteTest} />
+				<TrashIcon onClick={deleteNoteTest} />
 			</div>
 		</>
 	);

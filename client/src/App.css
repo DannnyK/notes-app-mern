@@ -5,16 +5,43 @@
 	height: 98vh;
 	width: 100%;
 }
+
 body {
 	background-image: url("https://images.unsplash.com/photo-1511884642898-4c92249e20b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
 	background-repeat: no-repeat;
 	background-size: cover;
+	margin: 0px;
+}
+
+.navbar {
+	backdrop-filter: blur(10px);
+	height: fit-content;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	justify-content: space-between;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.navbar h2 {
+	font-family: "Varela Round", sans-serif;
+	display: flex;
+	align-items: center;
+	color: aliceblue;
+	border-radius: 10px;
+	border: 0px solid rgba(0, 0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(10px);
+	width: fit-content;
+	padding: 0.5rem 1rem;
+	margin: 0px;
+	height: 80%;
+	/* margin: 0.5em 0.5em; */
 }
 
 .view-panel {
 	font-family: "Varela Round", sans-serif;
 	display: flex;
-	height: 100%;
+	height: 90%;
 	padding: 10px;
 	max-width: 100%;
 	justify-content: space-evenly;
@@ -29,12 +56,15 @@ body {
 	padding: 10px;
 	margin-right: 5px;
 	color: #0a090c;
-	height: 95%;
+	height: 97%;
 	width: 20%;
 	overflow-y: auto;
 	background-color: rgba(0, 0, 0, 0.2);
 	border-radius: 15px;
 	backdrop-filter: blur(30px);
+	scrollbar-width: thin;
+	scrollbar-color: rgba(255, 255, 255, 0.8) rgba(0, 0, 0, 0);
+	scroll-behavior: smooth;
 }
 .info {
 	color: #ffffff38;
@@ -47,6 +77,7 @@ body {
 }
 .info:active {
 	color: rgb(255, 0, 0);
+	cursor: not-allowed;
 }
 
 .unselectable {
@@ -64,17 +95,29 @@ body {
 	justify-content: center;
 	flex-direction: column;
 	padding: 10px;
-	color: #0a090c;
-	height: 95%;
+	color: whitesmoke;
+	height: 97%;
 	width: 75%;
 	border-radius: 15px;
 	background-color: rgba(0, 0, 0, 0.2);
 	backdrop-filter: blur(30px);
+	transition: 200ms ease-out;
 }
 
-.quill-editor {
-	height: 100%;
-	width: 100%;
+.edit-panel:focus-within {
+	background-color: rgba(255, 255, 255, 1);
+	color: black;
+}
+
+.edit-panel:focus-within svg {
+	fill: black;
+}
+
+.edit-panel:focus-within .form input {
+	color: black;
+}
+.edit-panel:focus-within .form textarea {
+	color: black;
 }
 
 .note {
@@ -82,17 +125,12 @@ body {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	max-height: 40%;
+	height: fit-content;
 	width: 100%;
 	margin-bottom: 15px;
 	border-radius: 7px;
-	background-color: rgba(255, 255, 255, 0.05);
-	backdrop-filter: blur(7px);
-	transition: 200ms, transform 50ms;
-}
-
-.note:active {
-	transform: scale(98%);
+	background-color: rgba(0, 0, 0, 0.25);
+	transition: 200ms ease-out, transform 50ms;
 }
 
 .note-body p {
@@ -116,6 +154,10 @@ body {
 	border-radius: 7px 7px 0px 0px;
 	background: #ffffff;
 	color: black;
+	cursor: pointer;
+}
+.note-body:active {
+	transform: scale(98%);
 }
 
 .note-body {
@@ -143,15 +185,15 @@ body {
 	padding: 10px 15px;
 	margin-bottom: 5px;
 	border-radius: 15px;
-	transition: 200ms;
+	transition: 300ms ease-in-out;
 	margin-top: 30px;
 }
 .note-footer svg:hover {
 	fill: rgb(255, 96, 47);
+	cursor: pointer;
 }
 .note-footer svg:active {
 	transform: scale(110%);
-	border-radius: 25px;
 }
 
 .no-notes {
@@ -178,11 +220,20 @@ body {
 
 .logo {
 	height: 50px;
+	user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+}
+.logo:hover {
+	cursor: not-allowed;
+}
+.logo:active {
+	display: none;
 }
 
 .submit-btn {
 	fill: white;
-	width: max-content;
+	width: fit-content;
 	height: 20px;
 	border: 0px solid black;
 	padding: 10px 20px;
@@ -196,20 +247,6 @@ body {
 }
 .submit-btn:active {
 	border-radius: 25px;
-}
-
-.form h2 {
-	display: flex;
-	align-items: center;
-	color: aliceblue;
-	border-radius: 10px;
-	border: 0px solid rgba(0, 0, 0, 0);
-	background-color: rgba(148, 148, 148, 0.05);
-	width: fit-content;
-	padding: 0.5rem 1rem;
-	margin: 0.5em 0.5em;
-	margin-bottom: 1em;
-	backdrop-filter: blur(10px);
 }
 
 .form input {
@@ -267,11 +304,6 @@ input:focus {
 .form-footer {
 	display: flex;
 	justify-content: flex-end;
-}
-
-.form-header {
-	display: flex;
-	justify-content: space-between;
 }
 
 @media screen and (max-width: 750px) {
