@@ -2,27 +2,27 @@ import React from "react";
 
 import { useSelector } from "react-redux";
 import Triangle from "../triangle/Triangle";
-import Note from "./note/Note";
+import NoteListItemComponent from "./note/NoteListItemComponent";
 
-const Notes = ({ setCurrentId }) => {
-	const notes = useSelector(state => state.notes);
+const NotesList = ({ setCurrentId }) => {
+	const notesCollection = useSelector(state => state.notes);
 
 	function clear() {
 		setCurrentId(false);
 	}
 
-	return !notes.length ? (
+	return !notesCollection.length ? (
 		<div className="note-list">
-			<div className="no-notes">
+			{/* <div className="no-notes">
 				<Triangle />
-			</div>
+			</div> */}
 			<i className="info">no notes</i>
 		</div>
 	) : (
 		<div className="note-list">
-			{notes.map(note => (
+			{notesCollection.map(note => (
 				<div className="note" key={note._id}>
-					<Note note={note} setCurrentId={setCurrentId} />
+					<NoteListItemComponent note={note} setCurrentId={setCurrentId} />
 				</div>
 			))}
 			<i className="info" onClick={clear}>
@@ -32,4 +32,4 @@ const Notes = ({ setCurrentId }) => {
 	);
 };
 
-export default Notes;
+export default NotesList;

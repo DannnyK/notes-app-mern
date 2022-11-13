@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { ReactComponent as TrashIcon } from "../../icons/trash-solid.svg";
 import { deleteNote } from "../../../actions/note-actions";
 
-const Note = ({ note, setCurrentId }) => {
+const NoteListItemComponent = ({ note, setCurrentId }) => {
 	const dispatch = useDispatch();
 
 	const deleteNoteTest = () => {
@@ -33,4 +33,4 @@ const Note = ({ note, setCurrentId }) => {
 	);
 };
 
-export default Note;
+export default NoteListItemComponent;

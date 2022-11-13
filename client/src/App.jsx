@@ -3,9 +3,8 @@ import { useDispatch } from "react-redux";
 import "./App.css";
 import { getNotes } from "./actions/note-actions";
 import Notes from "./components/notes/NotesList";
-import Form from "./components/form/Form";
 import Logo from "./components/icons/dk_logo.png";
-import QuillEditor from "./components/form/QuillEditor";
+import QuillEditor from "./components/editor/QuillEditor";
 
 const App = () => {
 	const [currentId, setCurrentId] = useState(null);
