@@ -28,7 +28,6 @@ const App = () => {
 			<div className="view-panel">
 				<Notes setCurrentId={setCurrentId} />
 				<div className="edit-panel">
-					{/* <Form currentId={currentId} setCurrentId={setCurrentId} /> */}
 					<QuillEditor currentId={currentId} setCurrentId={setCurrentId} />
 				</div>
 			</div>

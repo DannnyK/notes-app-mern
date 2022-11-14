@@ -75,10 +75,6 @@ body {
 .info:hover {
 	color: rgb(255, 255, 255);
 }
-.info:active {
-	color: rgb(255, 0, 0);
-	cursor: not-allowed;
-}
 
 .unselectable {
 	user-select: none;
@@ -142,7 +138,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	text-align: left;
-	padding: 3px 10px;
+	padding: 10px;
 	height: fit-content;
 	overflow-wrap: break-word;
 	overflow-y: auto;
@@ -174,7 +170,7 @@ body {
 	justify-content: space-between;
 	border-bottom-right-radius: inherit;
 	border-bottom-left-radius: inherit;
-	padding: 0.5em 1em;
+	padding: 0em 1em;
 }
 
 .note-footer svg {
@@ -236,7 +232,8 @@ body {
 	width: fit-content;
 	height: 20px;
 	border: 0px solid black;
-	padding: 10px 20px;
+	padding: 0px 20px;
+	margin: 5px;
 	border-radius: 10px;
 	background-color: rgba(255, 255, 255, 0.2);
 	transition: 100ms, fill 300ms ease-in-out;
@@ -244,6 +241,7 @@ body {
 
 .submit-btn:hover {
 	fill: rgb(132, 255, 132);
+	color: white;
 }
 .submit-btn:active {
 	border-radius: 25px;

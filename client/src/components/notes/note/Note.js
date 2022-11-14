@@ -19,11 +19,13 @@ const Note = ({ note, setCurrentId }) => {
 			alert(`Ok, ${note.title} won't be deleted :)`);
 		}
 	}
+
+	const regex = /(<([^>]+)>)/gi;
+
 	return (
 		<>
 			<div className="note-body" onClick={() => setCurrentId(note._id)}>
-				<p>{note.title}</p>
-				{note.body}
+				{note.body.replace(regex, "")}
 			</div>
 			<div className="note-footer">
 				<span>{moment(note.createdAt).fromNow()}</span>

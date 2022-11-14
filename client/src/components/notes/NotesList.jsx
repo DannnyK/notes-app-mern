@@ -1,22 +1,16 @@
 import React from "react";
 
 import { useSelector } from "react-redux";
-import Triangle from "../triangle/Triangle";
 import Note from "./note/Note";
 
 const Notes = ({ setCurrentId }) => {
 	const notes = useSelector(state => state.notes);
 
-	function clear() {
-		setCurrentId(false);
-	}
-
 	return !notes.length ? (
 		<div className="note-list">
 			<div className="no-notes">
-				<Triangle />
+				<i className="info">no notes</i>
 			</div>
-			<i className="info">no notes</i>
 		</div>
 	) : (
 		<div className="note-list">
@@ -25,9 +19,7 @@ const Notes = ({ setCurrentId }) => {
 					<Note note={note} setCurrentId={setCurrentId} />
 				</div>
 			))}
-			<i className="info" onClick={clear}>
-				Click on a note to edit it!
-			</i>
+			<i className="info">Click on a note to edit it!</i>
 		</div>
 	);
 };
