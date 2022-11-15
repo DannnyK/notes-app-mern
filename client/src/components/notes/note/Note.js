@@ -25,7 +25,7 @@ const Note = ({ note, setCurrentId }) => {
 	return (
 		<>
 			<div className="note-body" onClick={() => setCurrentId(note._id)}>
-				{note.body.replace(regex, "")}
+				{note.body?.replace(regex, "")}
 			</div>
 			<div className="note-footer">
 				<span>{moment(note.createdAt).fromNow()}</span>

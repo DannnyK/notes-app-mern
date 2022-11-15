@@ -38,12 +38,12 @@ export default function QuillEditor({ currentId, setCurrentId }) {
 		} else {
 			dispatch(createNote(noteData));
 		}
+		clearId();
 	}
 
 	//set data
 	function handleChange(data) {
 		setNoteData({ ...noteData, body: data });
-		console.log(noteData);
 	}
 	//clear current Id
 	function clearId() {
