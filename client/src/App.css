@@ -22,6 +22,13 @@ body {
 	justify-content: space-between;
 	background-color: rgba(0, 0, 0, 0.1);
 }
+.logo {
+	height: 50px;
+	user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+}
+
 .navbar h2 {
 	font-family: "Varela Round", sans-serif;
 	display: flex;
@@ -33,7 +40,14 @@ body {
 	padding: 0.5rem 1rem;
 	margin: 0px;
 	height: 80%;
-	/* margin: 0.5em 0.5em; */
+}
+.unselectable {
+	user-select: none;
+	transition: 500ms ease-in;
+}
+
+.unselectable:active {
+	color: rgb(255, 0, 0);
 }
 
 .view-panel {
@@ -64,23 +78,96 @@ body {
 	scrollbar-color: rgba(255, 255, 255, 0.8) rgba(0, 0, 0, 0);
 	scroll-behavior: smooth;
 }
+.note {
+	color: white;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	height: fit-content;
+	width: 100%;
+	margin-bottom: 15px;
+	border-radius: 7px;
+	background-color: rgba(0, 0, 0, 0.25);
+	transition: 200ms ease-out, transform 50ms;
+}
+
+.note-body {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	padding: 10px;
+	height: fit-content;
+	overflow-wrap: break-word;
+	overflow-y: auto;
+	transition: 200ms;
+	border-radius: 7px 7px 0px 0px;
+	scrollbar-width: thin;
+	scrollbar-color: #404b60 #99b3e5;
+}
+
+.note-body:hover {
+	border-radius: 7px 7px 0px 0px;
+	background: #ffffff;
+	color: black;
+	cursor: pointer;
+}
+.note-body:active {
+	transform: scale(98%);
+}
+
+.note-footer {
+	font-family: "Varela Round", sans-serif;
+	align-items: center;
+	font-weight: 100;
+	font-size: 12px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border-bottom-right-radius: inherit;
+	border-bottom-left-radius: inherit;
+	padding: 0em 1em;
+}
+
+.note-footer svg {
+	width: 15px;
+	transition: 200ms;
+	fill: rgba(255, 255, 255, 0.75);
+	border: 0px solid black;
+	padding: 10px 15px;
+	margin-bottom: 5px;
+	border-radius: 15px;
+	transition: 300ms ease-in-out;
+	margin-top: 30px;
+}
+.note-footer svg:hover {
+	fill: rgb(255, 113, 47);
+	cursor: pointer;
+}
+.note-footer svg:active {
+	transform: scale(110%);
+}
+
+.no-notes {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: fit-content;
+	margin: 20px;
+	padding: 20px;
+	border-radius: 25px;
+	background-color: rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(10px);
+}
+
 .info {
-	color: #ffffff38;
+	color: white;
 	user-select: none;
 	transition: 200ms ease-in;
 }
 
 .info:hover {
 	color: rgb(255, 255, 255);
-}
-
-.unselectable {
-	user-select: none;
-	transition: 500ms ease-in;
-}
-
-.unselectable:active {
-	color: rgb(255, 0, 0);
 }
 
 .edit-panel {
@@ -119,93 +206,6 @@ body {
 	background-color: rgba(0, 0, 0, 0.25);
 }
 
-.note {
-	color: white;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	height: fit-content;
-	width: 100%;
-	margin-bottom: 15px;
-	border-radius: 7px;
-	background-color: rgba(0, 0, 0, 0.25);
-	transition: 200ms ease-out, transform 50ms;
-}
-
-.note-body {
-	display: flex;
-	flex-direction: column;
-	text-align: left;
-	padding: 10px;
-	height: fit-content;
-	overflow-wrap: break-word;
-	overflow-y: auto;
-	transition: 200ms;
-	border-radius: 7px 7px 0px 0px;
-}
-
-.note-body:hover {
-	border-radius: 7px 7px 0px 0px;
-	background: #ffffff;
-	color: black;
-	cursor: pointer;
-}
-.note-body:active {
-	transform: scale(98%);
-}
-
-.note-body {
-	scrollbar-width: thin;
-	scrollbar-color: #404b60 #99b3e5;
-}
-
-.note-footer {
-	font-family: "Varela Round", sans-serif;
-
-	align-items: center;
-	font-weight: 100;
-	font-size: 12px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	border-bottom-right-radius: inherit;
-	border-bottom-left-radius: inherit;
-	padding: 0em 1em;
-}
-
-.note-footer svg {
-	width: 15px;
-	transition: 200ms;
-	fill: rgba(255, 255, 255, 0.75);
-	border: 0px solid black;
-	padding: 10px 15px;
-	margin-bottom: 5px;
-	border-radius: 15px;
-	transition: 300ms ease-in-out;
-	margin-top: 30px;
-}
-.note-footer svg:hover {
-	fill: rgb(255, 113, 47);
-	cursor: pointer;
-}
-.note-footer svg:active {
-	transform: scale(110%);
-}
-
-.no-notes {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	color: #183153;
-	width: fit-content;
-	margin: 20px;
-	padding: 20px;
-	border-radius: 25px;
-	background-color: rgba(255, 255, 255, 0.05);
-	backdrop-filter: blur(10px);
-}
-
 .form {
 	display: flex;
 	text-align: center;
@@ -214,84 +214,22 @@ body {
 	height: 100%;
 }
 
-.logo {
-	height: 50px;
-	user-select: none;
-	-webkit-user-drag: none;
-	-webkit-user-select: none;
-}
-
 .submit-btn {
 	font-family: "Varela Round", sans-serif;
 	font-weight: 900;
+	font-size: 20px;
 	color: white;
 	width: 50%;
 	border: 0px solid black;
-	padding: 20px;
+	padding: 10px;
 	margin: 5px;
 	border-radius: 5px;
 	background-color: rgba(255, 255, 255, 0.2);
 	transition: 100ms, fill 300ms ease-in-out;
 }
 
-.submit-btn:hover {
-	fill: rgb(132, 255, 132);
-	color: white;
-}
 .submit-btn:active {
 	border-radius: 25px;
-}
-
-.form input {
-	font-family: "Varela Round", sans-serif;
-	color: rgb(255, 255, 255);
-	font-weight: 600;
-	font-size: 1em;
-	padding: 0px 20px;
-	height: 50px;
-	border-radius: 10px 10px 0px 0px;
-	border: 1px solid rgba(255, 255, 255, 0);
-	border-bottom: 1px double rgba(255, 255, 255, 0.05);
-	background-color: rgba(228, 228, 228, 0.1);
-	backdrop-filter: blur(10px);
-	transition: all 200ms;
-}
-.form textarea {
-	font-family: "Varela Round", sans-serif;
-	color: rgb(255, 255, 255);
-	padding: 0px 20px;
-	font-size: 0.9em;
-	font-weight: 300;
-	border-radius: 0px 0px 10px 10px;
-	border: 1px solid rgba(255, 255, 255, 0);
-	border-top: none;
-	height: 100%;
-	margin-bottom: 10px;
-	background-color: rgba(228, 228, 228, 0.1);
-	backdrop-filter: blur(10px);
-	resize: none;
-	transition: all 200ms;
-}
-
-textarea:hover {
-	outline: none;
-	background-color: rgba(255, 255, 255, 0.1);
-	border-radius: 0px 0px 10px 10px;
-	color: #ffffff;
-}
-input:hover {
-	outline: none;
-	border-radius: 10px 10px 0px 0px;
-	color: #ffffff;
-	background-color: rgba(255, 255, 255, 0.1);
-}
-textarea:focus {
-	outline: none;
-	border-radius: 0px 0px 50px 50px;
-}
-input:focus {
-	outline: none;
-	border-radius: 50px 50px 0px 0px;
 }
 
 .form-footer {
@@ -322,11 +260,6 @@ input:focus {
 	.form {
 		text-align: left;
 	}
-	.form input {
-		text-align: center;
-		font-size: 0.7em;
-		font-weight: 100;
-	}
 }
 
 @media screen and (max-width: 650px) {
@@ -345,9 +278,6 @@ input:focus {
 	.edit-panel {
 		height: 100%;
 		width: 50%;
-	}
-	.form-header {
-		visibility: hidden;
 	}
 }
 
@@ -368,13 +298,5 @@ input:focus {
 	.edit-panel {
 		width: 95%;
 		height: 40%;
-	}
-
-	.form input {
-		color: white;
-	}
-
-	.form textarea {
-		height: 50%;
 	}
 }
