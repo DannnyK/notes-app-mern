@@ -22,15 +22,6 @@ export default function QuillEditor({ currentId, setCurrentId }) {
 		if (currentNote) setNoteData(currentNote);
 	}, [currentNote]);
 
-	// TODO implement update Timer
-	// let saveTimer;
-	// function startUpdateTimer(data) {
-	// 	saveTimer = setTimeout(() => {
-	// 		handleSubmit(data);
-	// 	}, countDownMs).then(clearTimeout(saveTimer));
-	// }
-
-	//save / update data
 	function handleSubmit() {
 		if (currentId) {
 			dispatch(updateNote(currentId, noteData));
@@ -44,11 +35,9 @@ export default function QuillEditor({ currentId, setCurrentId }) {
 		clearId();
 	}
 
-	//set data
 	function updateNoteData(data) {
 		setNoteData({ ...noteData, body: data });
 	}
-	//clear current Id
 	function clearId() {
 		setCurrentId(null);
 		setNoteData("");
