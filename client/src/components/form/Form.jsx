@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createNote, updateNote } from "../../actions/note-actions";
-// eslint-disable-next-line no-unused-vars
-import QuillEditor from "./QuillEditor";
 
 import { ReactComponent as SubmitIcon } from "../icons/update.svg";
 import { ReactComponent as SaveIcon } from "../icons/save.svg";

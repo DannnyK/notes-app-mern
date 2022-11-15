@@ -17,19 +17,18 @@ export default function QuillEditor({ currentId, setCurrentId }) {
 	});
 	const dispatch = useDispatch();
 	const currentNote = useSelector(state => (currentId ? state.notes.find(p => p._id === currentId) : null));
-	const countDownMs = 5000;
 
 	useEffect(() => {
 		if (currentNote) setNoteData(currentNote);
 	}, [currentNote]);
 
-	//update Timer
-	let saveTimer;
-	function startUpdateTimer(data) {
-		saveTimer = setTimeout(() => {
-			handleSubmit(data);
-		}, countDownMs).then(clearTimeout(saveTimer));
-	}
+	// TODO implement update Timer
+	// let saveTimer;
+	// function startUpdateTimer(data) {
+	// 	saveTimer = setTimeout(() => {
+	// 		handleSubmit(data);
+	// 	}, countDownMs).then(clearTimeout(saveTimer));
+	// }
 
 	//save / update data
 	function handleSubmit() {
@@ -42,7 +41,7 @@ export default function QuillEditor({ currentId, setCurrentId }) {
 	}
 
 	//set data
-	function handleChange(data) {
+	function updateNoteData(data) {
 		setNoteData({ ...noteData, body: data });
 	}
 	//clear current Id
@@ -57,7 +56,7 @@ export default function QuillEditor({ currentId, setCurrentId }) {
 				<ReactQuill
 					className="form"
 					theme={"snow"}
-					onChange={x => handleChange(x)}
+					onChange={x => updateNoteData(x)}
 					value={noteData.body}
 					modules={editorModules}
 					formats={editorFormats}

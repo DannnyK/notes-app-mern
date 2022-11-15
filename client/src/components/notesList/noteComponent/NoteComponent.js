@@ -6,21 +6,16 @@ import { deleteNote } from "../../../actions/note-actions";
 
 const Note = ({ note, setCurrentId }) => {
 	const dispatch = useDispatch();
-
-	const deleteNoteTest = () => {
-		dispatch(deleteNote(note._id));
-	};
+	const regex = /(<([^>]+)>)/gi;
 
 	function deleteNoteConfirm() {
 		let confirm = prompt("are you sure? (y/n)");
 		if (confirm.toLowerCase() === "y") {
 			dispatch(deleteNote(note._id));
 		} else {
-			alert(`Ok, ${note.title} won't be deleted :)`);
+			alert(`Your note was not deleted`);
 		}
 	}
-
-	const regex = /(<([^>]+)>)/gi;
 
 	return (
 		<>
@@ -29,7 +24,7 @@ const Note = ({ note, setCurrentId }) => {
 			</div>
 			<div className="note-footer">
 				<span>{moment(note.createdAt).fromNow()}</span>
-				<TrashIcon onClick={deleteNoteTest} />
+				<TrashIcon onClick={deleteNoteConfirm} />
 			</div>
 		</>
 	);
