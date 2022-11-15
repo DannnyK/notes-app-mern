@@ -1,2 +1,15 @@
-# notes-app-mern
- Notes and schedule app built with MongoDB, ExpressJs, React and Node.
+# Notes app
+allows you to take notes
+
+# To Run
+simply use 'npm start' in client and server directories
+
+```bash
+  cd client
+  npm start
+```
+```bash
+  cd server
+  npm start
+```
+ 
