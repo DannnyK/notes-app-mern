@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import './App.css';
-import { getNotes } from './actions/note-actions';
-import Notes from './components/notes/NotesList';
-import Form from './components/form/Form';
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { getNotes } from "./actions/note-actions";
+import Notes from "./components/notesList/NotesList";
+import Logo from "./components/icons/dk_logo.png";
+import QuillEditor from "./components/form/QuillEditor";
+import "./App.css";
 
 const App = () => {
 	const [currentId, setCurrentId] = useState(null);
@@ -15,13 +16,14 @@ const App = () => {
 
 	return (
 		<div className="main">
-			<nav className="menu-bar">
-				<h1>Menu Bar</h1>
+			<nav className="navbar">
+				<img className="logo" src={Logo} alt="Daniel Kruger logo" />
+				<h2 className="unselectable">Notes App</h2>
 			</nav>
 			<div className="view-panel">
 				<Notes setCurrentId={setCurrentId} />
 				<div className="edit-panel">
-					<Form currentId={currentId} setCurrentId={setCurrentId} />
+					<QuillEditor currentId={currentId} setCurrentId={setCurrentId} />
 				</div>
 			</div>
 		</div>

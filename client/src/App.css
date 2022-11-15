@@ -6,25 +6,57 @@
 	width: 100%;
 }
 
-.menu-bar {
+body {
+	background-image: url("https://images.unsplash.com/photo-1511884642898-4c92249e20b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0px;
+}
+
+.navbar {
+	backdrop-filter: blur(10px);
+	height: fit-content;
 	display: flex;
-	background-color: #0a090c;
-	border-radius: 10px;
-	color: white;
-	width: 100%;
-	flex-direction: column;
-	justify-content: flex-end;
 	align-items: center;
-	margin-bottom: 5px;
+	padding: 10px;
+	justify-content: space-between;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.logo {
+	height: 50px;
+	user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+}
+
+.navbar h2 {
+	font-family: "Varela Round", sans-serif;
+	display: flex;
+	align-items: center;
+	color: white;
+	border-radius: 10px;
+	border: 0px solid rgba(0, 0, 0, 0);
+	width: fit-content;
+	padding: 0.5rem 1rem;
+	margin: 0px;
+	height: 80%;
+}
+.unselectable {
+	user-select: none;
+	transition: 500ms ease-in;
+}
+
+.unselectable:active {
+	color: rgb(255, 0, 0);
 }
 
 .view-panel {
+	font-family: "Varela Round", sans-serif;
 	display: flex;
-	background-color: #f0edee;
 	height: 90%;
-	padding-top: 10px;
-	width: 100%;
-	justify-content: center;
+	padding: 10px;
+	max-width: 100%;
+	justify-content: space-evenly;
 	align-items: center;
 }
 
@@ -33,77 +65,238 @@
 	justify-content: flex-start;
 	align-items: center;
 	flex-direction: column;
-	background-color: #f0edee;
 	padding: 10px;
 	margin-right: 5px;
 	color: #0a090c;
-	border-radius: 10px;
-	box-shadow: inset 0 3px 10px rgb(0 0 0 / 0.2);
 	height: 97%;
 	width: 20%;
-	overflow-y: scroll;
+	overflow-y: auto;
+	background-color: rgba(0, 0, 0, 0.2);
+	border-radius: 15px;
+	backdrop-filter: blur(30px);
+	scrollbar-width: thin;
+	scrollbar-color: rgba(255, 255, 255, 0.8) rgba(0, 0, 0, 0);
+	scroll-behavior: smooth;
+}
+.note {
+	color: white;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	height: fit-content;
+	width: 100%;
+	margin-bottom: 15px;
+	border-radius: 7px;
+	background-color: rgba(0, 0, 0, 0.25);
+	transition: 200ms ease-out, transform 50ms;
+}
+
+.note-body {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	padding: 10px;
+	height: fit-content;
+	overflow-wrap: break-word;
+	overflow-y: auto;
+	transition: 200ms;
+	border-radius: 7px 7px 0px 0px;
+	scrollbar-width: thin;
+	scrollbar-color: #404b60 #99b3e5;
+}
+
+.note-body:hover {
+	border-radius: 7px 7px 0px 0px;
+	background: #ffffff;
+	color: black;
+	cursor: pointer;
+}
+.note-body:active {
+	transform: scale(98%);
+}
+
+.note-footer {
+	font-family: "Varela Round", sans-serif;
+	align-items: center;
+	font-weight: 100;
+	font-size: 12px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border-bottom-right-radius: inherit;
+	border-bottom-left-radius: inherit;
+	padding: 0em 1em;
+}
+
+.note-footer svg {
+	width: 15px;
+	transition: 200ms;
+	fill: rgba(255, 255, 255, 0.75);
+	border: 0px solid black;
+	padding: 10px 15px;
+	margin-bottom: 5px;
+	border-radius: 15px;
+	transition: 300ms ease-in-out;
+	margin-top: 30px;
+}
+.note-footer svg:hover {
+	fill: rgb(255, 113, 47);
+	cursor: pointer;
+}
+.note-footer svg:active {
+	transform: scale(110%);
+}
+
+.no-notes {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: fit-content;
+	margin: 20px;
+	padding: 20px;
+	border-radius: 25px;
+	background-color: rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(10px);
+}
+
+.info {
+	color: white;
+	user-select: none;
+	transition: 200ms ease-in;
+}
+
+.info:hover {
+	color: rgb(255, 255, 255);
 }
 
 .edit-panel {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: #f0edee;
+	flex-direction: column;
 	padding: 10px;
-	color: #0a090c;
-	border-radius: 10px;
-	box-shadow: inset 0 3px 10px rgb(0 0 0 / 0.2);
+	color: whitesmoke;
 	height: 97%;
 	width: 75%;
+	border-radius: 15px;
+	background-color: rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(30px);
+	transition: 200ms ease-out;
 }
 
-.note {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	border-radius: 10px;
-	background-color: #f0edee;
-	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-	max-height: 20%;
-	width: 100%;
-	margin-bottom: 7px;
+.edit-panel:focus-within {
+	background-color: rgba(255, 255, 255, 1);
+	color: black;
 }
 
-.note-header {
-	border-top-right-radius: inherit;
-	border-top-left-radius: inherit;
-	background-color: #b6b6b617;
-	box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.092);
+.edit-panel:focus-within svg {
+	fill: black;
 }
 
-.note-header h1 {
-	font-size: medium;
-	padding: 0;
+.edit-panel:focus-within .form input {
+	color: black;
+}
+.edit-panel:focus-within .form textarea {
+	color: black;
 }
 
-.note-body {
-	display: flex;
-	padding: 3px;
-	height: 5em;
-}
-
-.note-footer {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	background-color: #b6b6b65b;
-	border-bottom-right-radius: inherit;
-	border-bottom-left-radius: inherit;
-	box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
-	padding: 5px 0px;
+.edit-panel:focus-within .form .submit-btn {
+	color: black;
+	background-color: rgba(0, 0, 0, 0.25);
 }
 
 .form {
 	display: flex;
 	text-align: center;
 	flex-direction: column;
-	justify-content: space-around;
 	width: 100%;
 	height: 100%;
-	flex-grow: 1;
+}
+
+.submit-btn {
+	font-family: "Varela Round", sans-serif;
+	font-weight: 900;
+	font-size: 20px;
+	color: white;
+	width: 50%;
+	border: 0px solid black;
+	padding: 10px;
+	margin: 5px;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.2);
+	transition: 100ms, fill 300ms ease-in-out;
+}
+
+.submit-btn:active {
+	border-radius: 25px;
+}
+
+.form-footer {
+	display: flex;
+	justify-content: flex-end;
+}
+
+@media screen and (max-width: 750px) {
+	body {
+		padding: 0%;
+	}
+	.view-panel {
+		width: 100%;
+		padding: 0px;
+	}
+	.edit-panel {
+		width: 50%;
+	}
+
+	.note-list {
+		width: 50%;
+	}
+
+	.form-header {
+		visibility: hidden;
+		height: 0px;
+	}
+	.form {
+		text-align: left;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.view-panel {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		width: 100%;
+		padding: 0px;
+	}
+
+	.note-list {
+		height: 100%;
+		width: 50%;
+	}
+	.edit-panel {
+		height: 100%;
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.view-panel {
+		display: flex;
+		flex-direction: column;
+		width: 100vw;
+	}
+
+	.note-list {
+		width: 95%;
+		padding: 0px;
+		margin: 0px;
+		height: 60%;
+	}
+
+	.edit-panel {
+		width: 95%;
+		height: 40%;
+	}
 }

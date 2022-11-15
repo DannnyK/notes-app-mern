@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const noteSchema = mongoose.Schema({
 	title: String,
@@ -9,6 +9,6 @@ const noteSchema = mongoose.Schema({
 	}
 });
 
-const NoteModel = mongoose.model('Note', noteSchema);
+const NoteModel = mongoose.model("Note", noteSchema);
 
 export default NoteModel;
