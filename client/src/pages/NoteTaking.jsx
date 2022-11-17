@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { getNotes } from "./actions/note-actions";
-import Notes from "./components/notesList/NotesList";
-import Logo from "./components/icons/dk_logo.png";
-import QuillEditor from "./components/form/QuillEditor";
-import "./App.css";
+import { getNotes } from "../actions/note-actions";
+import Notes from "../components/notesList/NotesList";
+import QuillEditor from "../components/form/QuillEditor";
+import "../App.css";
+import Navbar from "../components/Navbar";
 
 const App = () => {
 	const [currentId, setCurrentId] = useState(null);
@@ -16,10 +16,7 @@ const App = () => {
 
 	return (
 		<div className="main">
-			<nav className="navbar">
-				<img className="logo" src={Logo} alt="Daniel Kruger logo" />
-				<h2 className="unselectable">Notes App</h2>
-			</nav>
+			<Navbar />
 			<div className="view-panel">
 				<Notes setCurrentId={setCurrentId} />
 				<div className="edit-panel">
