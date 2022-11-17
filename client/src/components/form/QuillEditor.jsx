@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactQuill from "react-quill";
 import { useDispatch, useSelector } from "react-redux";
-import { createNote, updateNote, deleteNote } from "../../actions/note-actions";
+import { createNote, updateNote } from "../../actions/note-actions";
 import "react-quill/dist/quill.snow.css";
 import "react-quill/dist/quill.bubble.css";
 import "react-quill/dist/quill.core.css";

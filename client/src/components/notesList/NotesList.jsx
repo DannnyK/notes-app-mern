@@ -9,7 +9,9 @@ const Notes = ({ setCurrentId }) => {
 	return !notes.length ? (
 		<div className="note-list">
 			<div className="no-notes">
-				<i className="info">no notes</i>
+				<i className="info">
+					<h2>No Notes</h2>
+				</i>
 			</div>
 		</div>
 	) : (

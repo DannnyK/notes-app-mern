@@ -1,14 +1,14 @@
 import React from "react";
-import Logo from "../components/icons/dk_logo.png";
 
 const Home = () => {
 	return (
 		<div className="home-panel">
-			<div className="card">
+			<div className="card" id="home-nav-block">
 				<h1>Home Page</h1>
-				{/* <img className="logo" src={Logo} alt="logo" /> */}
 				<div className="link-list">
-					<a href="/notes">Notes</a>
+					<a href="/notes">
+						<h2>NOTES</h2>
+					</a>
 				</div>
 			</div>
 		</div>

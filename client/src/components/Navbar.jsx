@@ -12,7 +12,6 @@ const Navbar = () => {
 						<a href="/notes">Notes</a>
 					</div>
 				</div>
-				<h2 className="unselectable">Notes App</h2>
 			</nav>
 		</>
 	);
