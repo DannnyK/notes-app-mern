@@ -1,0 +1,13 @@
+@font-face {
+	font-family: "HomePageDisplay";
+	src: url(../fonts/MajorMonoDisplay-Regular.ttf);
+}
+
+.display {
+	font-family: "HomePageDisplay";
+}
+
+.display-link {
+	font-family: "HomePageDisplay";
+	font-weight: 400;
+}

@@ -1,23 +1,26 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Notes from "./pages/NoteTaking";
-import NoPage from "./pages/NoPage";
-import Home from "./pages/Home";
-import Layout from "./pages/Layout";
+import React, { lazy, Suspense } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Loading from "./pages/Loading";
+
+const Notes = lazy(() => import("./pages/NoteTaking"));
+const NoPage = lazy(() => import("./pages/NoPage"));
+const Home = lazy(() => import("./pages/Home"));
 
 const App = () => {
 	return (
 		<>
-			<BrowserRouter>
-				<Routes>
-					<Route path="/" element={<Layout />}>
-						<Route index element={<Home />} />
+			<Router>
+				<Navbar />
+				<Suspense fallback={<Loading />}>
+					<Routes>
+						<Route path="/" element={<Home />} />
 						<Route path="/notes" element={<Notes />} />
 						<Route path="/error" element={<NoPage />} />
 						<Route path="*" element={<NoPage />} />
-					</Route>
-				</Routes>
-			</BrowserRouter>
+					</Routes>
+				</Suspense>
+			</Router>
 		</>
 	);
 };

@@ -10,7 +10,7 @@ const Notes = ({ setCurrentId }) => {
 		<div className="note-list">
 			<div className="no-notes">
 				<i className="info">
-					<h2>No Notes</h2>
+					<h2>Make A new note</h2>
 				</i>
 			</div>
 		</div>
