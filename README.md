@@ -1,15 +1,5 @@
 # Notes app
-allows you to take notes
+pretty little note taking app
 
-# To Run
-simply use 'npm start' in client and server directories
+****![image](https://github.com/Kruger-D/Notes/assets/113841516/44334825-06da-48f7-ab0d-be690dfd6343)
 
-```bash
-  cd client
-  npm start
-```
-```bash
-  cd server
-  npm start
-```
- 
